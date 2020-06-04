@@ -19,7 +19,7 @@ class PostsTable extends Migration
         }
 
         Schema::create('posts', function (Blueprint $table) {
-            $table->bigInteger('id');
+            $table->bigIncrements('id');
             $table->integer('user_id');
             $table->timestamp('post_date');
             $table->text('post_content');
@@ -28,8 +28,7 @@ class PostsTable extends Migration
             $table->string('post_name');
             $table->string('post_type');
             $table->text('post_category');
-           // $table->timestamps('created_at');
-           // $table->timestamps('updated_at');
+            $table->timestamps();
         });
     }
 

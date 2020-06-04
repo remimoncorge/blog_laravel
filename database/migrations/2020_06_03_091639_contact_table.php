@@ -23,7 +23,6 @@ class ContactTable extends Migration
             $table->string('contact_name');
             $table->string('contact_email');
             $table->text('contact_message');
-            $table->timestamp('contact_date');
            // $table->timestamps('created_at');
            // $table->timestamps('updated_at');
         });

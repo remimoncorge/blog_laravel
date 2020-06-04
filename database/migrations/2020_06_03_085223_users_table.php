@@ -20,14 +20,13 @@ class UsersTable extends Migration
 
 
         Schema::create('users', function (Blueprint $table) {
-            $table->integer('id');
+            $table->bigIncrements('id');
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken('remember_token');
-           // $table->timestamps('created_at');
-           // $table->timestamps('updated_at');
+            $table->timestamps();
         });
     }
 

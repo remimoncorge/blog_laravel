@@ -8,6 +8,16 @@ class HomeController extends Controller
 {
     //
     function index(){
-        return view('layouts/welcome');
+
+        $posts = \App\Post::orderBy('post_date')->get(); //get all posts
+
+        
+
+
+        return view('layouts/welcome',array('posts' => $posts));
+
+ 
+        
     }
 }
+ 

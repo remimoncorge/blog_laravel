@@ -63,29 +63,30 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .footer {
+                text-align: center;
+            }
         </style>
     </head>
     
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+        
+        <div>
+        <ul>
+        <?php 
+        
+        for ($i=sizeof($posts); $i>sizeof($posts)-3; $i--){
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+            echo('<li>'.$posts[$i-1]->post_title.'  '.$posts[$i-1]->post_date.'</li>');
+            } ?>
+           
+        </ul>
 
-            <div class="content">
-                <p>footer</p>
-            </div>
         </div>
+
+
+       
     </body>
 </html>
 @endsection

@@ -24,8 +24,7 @@ class CommentsTable extends Migration
             $table->string('comment_name');
             $table->string('comment_email');
             $table->text('comment_content');
-           // $table->timestamps('created_at');
-           // $table->timestamps('updated_at');
+           // $table->timestamps();
         });
     }
 

@@ -1,73 +1,24 @@
-@extends('layouts/main');
-<!DOCTYPE html>
+@extends('layouts/main')
+
 @section('content')
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<div>
+    <ul>
 
-        <title>Laravel</title>
+        <?php 
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+            // Affichage des 3 articles les plus récents
+            for ($i=sizeof($posts); $i>0; $i--){
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+                // Conversion en format url
+                $url = str_replace(" ", "_", $posts[$i-1]->post_title);
+                $url = str_replace(".", "", $url);
 
-            .full-height {
-                height: 100vh;
-            }
+                echo('<li><a href=http://localhost:8000/articles/'.$url.'>'.
+                $posts[$i-1]->post_title.'</a>'.$posts[$i-1]->post_date.'</li>');
+                } 
+        ?>
+        
+    </ul>
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    
-    <body>
-        <h1>Articles</h1>
-    </body>
-</html>
+</div>
 @endsection

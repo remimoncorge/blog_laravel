@@ -25,4 +25,6 @@ Route::get('/contact', 'ContactController@index');
 
 Route::get('/articles/{post_name}', 'ArticlesController@show');
 
+Route::post('/contact', 'ContactController@store');
+
 

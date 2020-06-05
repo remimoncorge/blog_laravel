@@ -8,7 +8,10 @@ class ArticlesController extends Controller
 {
     //
     function index(){
-        return view('layouts/articles');
+
+        $posts = \App\Post::orderBy('post_date')->get(); // post trié par date
+
+        return view('layouts/articles',array('posts' => $posts));
         
     }
 

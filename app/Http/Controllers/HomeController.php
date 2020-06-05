@@ -9,14 +9,9 @@ class HomeController extends Controller
     //
     function index(){
 
-        $posts = \App\Post::orderBy('post_date')->get(); //get all posts
-
-        
-
+        $posts = \App\Post::orderBy('post_date')->get(); // post trié par date
 
         return view('layouts/welcome',array('posts' => $posts));
-
- 
         
     }
 }

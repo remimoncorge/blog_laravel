@@ -23,6 +23,8 @@ class ContactRequest extends FormRequest
      */
     public function rules()
     {
+        // On veut un nom, un email et un message limité en nombre de caractères
+
         return [
             'nom' => 'required',
             'email' => 'required|email',

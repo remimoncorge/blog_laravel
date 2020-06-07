@@ -71,6 +71,32 @@
         .errors{
             color:red;
         }
+
+        .connexion{
+            text-align: right;
+        }
+
+        #edit_button{
+            background-color: #FFA500;
+            color:white;
+            padding: 13px 28px;
+            text-align: center;
+        }
+
+        #delete_button{
+            background-color: #f44336;;
+            color:white;
+            padding: 13px 28px;
+            text-align: center;
+        }
+
+        #new_button{
+            background-color: #4CAF50;
+            color:white;
+            padding: 13px 28px;
+            text-align: center;
+            font-size: 16px;
+        }
     </style>
 </head>
 
@@ -84,6 +110,13 @@
                 <li><a href="/contact">Contact</a></li>
             </ul>
         </div>
+        <div class="top-bar-right">
+            <ul class="menu">
+                <li class="connexion"><a href="/connexion">Se connecter</a></li>
+            </ul>
+            
+        </div>
+
     </div>
 
     <div class="callout large primary">

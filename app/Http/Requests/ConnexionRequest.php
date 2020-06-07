@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CommentRequest extends FormRequest
+class ConnexionRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,12 +23,9 @@ class CommentRequest extends FormRequest
      */
     public function rules()
     {
-        // On veut un nom, un email et un texte limité en nombre de caractères
         return [
-            //
-            'nom' => 'required',
-            'email' => 'required|email',
-            'message' => 'required|max:300',
+             'email' => 'required|email',
+             'mdp' => 'required',
         ];
     }
 }

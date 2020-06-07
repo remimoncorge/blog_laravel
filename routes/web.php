@@ -29,6 +29,11 @@ Route::post('/contact', 'ContactController@store');
 
 Route::post('/articles', 'ArticlesController@store_comment');
 
+Route::get('/connexion', 'ConnexionController@index');
+
+Route::post('/connexion', 'ConnexionController@connexion');
+
+Route::resource('/admin', 'AdminController');
 
 
 

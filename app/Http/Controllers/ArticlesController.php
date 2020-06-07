@@ -21,7 +21,9 @@ class ArticlesController extends Controller
         // Conversion de l'url vers la forme dans la base de données
         $post_name=str_replace("_", " ", $post_name);
         $post_name = $post_name.'.';
+        
 
+        // On récupère le post et les commentaires pour les passer à la vue
         $post = \App\Post::where('post_title',$post_name)->first();
         $comments = \App\Comment::where('post_id',$post->id)->get(); 
         return view('posts/single',array( 'post' => $post, 'comments' => $comments));
@@ -30,7 +32,7 @@ class ArticlesController extends Controller
 
      public function store_comment(CommentRequest $request){
         
-        
+        // Enregistre un commentaire
         $new_comment = new Comment;
         $new_comment->setAttribute('post_id', $request->post_id);
         $new_comment->setAttribute('comment_name', $request->nom);
@@ -38,8 +40,12 @@ class ArticlesController extends Controller
         $new_comment->setAttribute('comment_content', $request->message);
         $new_comment->save();
 
-
+        // Envoie un écran de confirmation si le formulaire a été validé
         return view('layouts/comment_confirm', array('new_comment' => $new_comment));
      }
      
 }
+
+
+
+

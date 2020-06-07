@@ -27,4 +27,8 @@ Route::get('/articles/{post_name}', 'ArticlesController@show');
 
 Route::post('/contact', 'ContactController@store');
 
+Route::post('/articles', 'ArticlesController@store_comment');
+
+
+
 

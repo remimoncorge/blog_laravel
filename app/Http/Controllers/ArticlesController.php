@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\CommentRequest;
+use App\Comment;
 
 class ArticlesController extends Controller
 {
@@ -21,8 +22,24 @@ class ArticlesController extends Controller
         $post_name=str_replace("_", " ", $post_name);
         $post_name = $post_name.'.';
 
-        $post = \App\Post::where('post_title',$post_name)->first(); 
-        return view('posts/single',array( 'post' => $post));
+        $post = \App\Post::where('post_title',$post_name)->first();
+        $comments = \App\Comment::where('post_id',$post->id)->get(); 
+        return view('posts/single',array( 'post' => $post, 'comments' => $comments));
+     }
+
+
+     public function store_comment(CommentRequest $request){
+        
+        
+        $new_comment = new Comment;
+        $new_comment->setAttribute('post_id', $request->post_id);
+        $new_comment->setAttribute('comment_name', $request->nom);
+        $new_comment->setAttribute('comment_email', $request->email);
+        $new_comment->setAttribute('comment_content', $request->message);
+        $new_comment->save();
+
+
+        return view('layouts/comment_confirm', array('new_comment' => $new_comment));
      }
      
 }

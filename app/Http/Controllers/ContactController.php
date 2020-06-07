@@ -22,6 +22,6 @@ class ContactController extends Controller
         $new_contact->save();
 
 
-        return view('layouts/confirm', array('new_contact' => $new_contact));
+        return view('layouts/contact_confirm', array('new_contact' => $new_contact));
     }
 }

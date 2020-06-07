@@ -28,6 +28,7 @@ class PostsTable extends Migration
             $table->string('post_name');
             $table->string('post_type');
             $table->text('post_category');
+            $table->text('image');
             $table->timestamps();
         });
     }

@@ -24,6 +24,7 @@ $factory->define(Post::class, function (Faker $faker) {
         'post_name' => $faker->firstName(),
         'post_type' => 'article',
         'post_category' => $faker->randomElement(['voyage', 'cuisine', 'vie sociale']),
+        'image' => $faker->imageUrl($width = 640, $height = 480),
     ];
 });
 

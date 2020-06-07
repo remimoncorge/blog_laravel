@@ -6,9 +6,11 @@
     <h3>Auteur : {{$post->post_name}}</h2>
     <h3>Parution : {{$post->post_date}}</h2>
     <p>{{$post->post_content}}</p>
+    <img src="{{$post->image}}">
 </div>
 
 <div>
+
     <h2>Commentaires</h2>
 
 
@@ -19,9 +21,7 @@
         {{ $comment->comment_content }}
     </p>
    
-   @endforeach
-
-   
+   @endforeach 
 
 </div>
 
@@ -43,9 +43,6 @@
     <input type="email" name="email" placeholder="Email">
     <textarea name="message" form="comment_form" rows="5" placeholder="Votre commentaire"></textarea>
     <input type="submit" value="Envoyer" >
-
-    
-    
 
     </form>
 

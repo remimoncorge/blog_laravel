@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Http\Requests\ContactRequest;
+use App\Contact;
 
 class ContactController extends Controller
 {
@@ -13,17 +14,14 @@ class ContactController extends Controller
 
     public function store(ContactRequest $request)
     {
-        $message = 'formulaire OK';
 
-        var_dump($request->nom);
-        if (!$request->nom) {
-            $message = 'formulaire not OK';
-            return redirect()->back()->with('error_message', $message);
-        }
-
+        $new_contact = new Contact;
+        $new_contact->setAttribute('contact_name', $request->nom);
+        $new_contact->setAttribute('contact_email', $request->email);
+        $new_contact->setAttribute('contact_message', $request->message);
+        $new_contact->save();
 
 
-
-        return redirect()->back()->with('success_message', $message);
+        return view('layouts/confirm', array('new_contact' => $new_contact));
     }
 }

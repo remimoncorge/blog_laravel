@@ -19,12 +19,11 @@ class ContactTable extends Migration
         }
 
         Schema::create('contact', function (Blueprint $table) {
-            $table->bigInteger('id');
+            $table->bigIncrements('id');
             $table->string('contact_name');
             $table->string('contact_email');
             $table->text('contact_message');
-           // $table->timestamps('created_at');
-           // $table->timestamps('updated_at');
+            $table->timestamps();
         });
     }
 

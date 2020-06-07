@@ -65,6 +65,7 @@
 
         .footer{
             text-align: center;
+            padding-top: 50px;
         }
 
         .errors{

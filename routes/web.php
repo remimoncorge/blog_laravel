@@ -11,9 +11,7 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+
 
 Route::get('/', 'HomeController@index');
 
@@ -33,7 +31,23 @@ Route::get('/connexion', 'ConnexionController@index');
 
 Route::post('/connexion', 'ConnexionController@connexion');
 
-Route::resource('/admin', 'AdminController');
+
+Route::get('/admin', 'AdminController@index');
+
+Route::get('/admin/edit', 'AdminController@edit');
+
+Route::post('/admin/edit', 'AdminController@update');
+
+Route::get('/admin/delete', 'AdminController@delete');
+
+Route::get('/admin/create', 'AdminController@create');
+
+Route::post('/admin/create', 'AdminController@store');
+
+
+
+
+
 
 
 

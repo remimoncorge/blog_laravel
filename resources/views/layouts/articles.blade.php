@@ -14,7 +14,8 @@
                 $url = str_replace(".", "", $url);
 
                 echo('<li><a href=http://localhost:8000/articles/'.$url.'>'.
-                $posts[$i-1]->post_title.'</a>'.$posts[$i-1]->post_date.'</li>');
+                $posts[$i-1]->post_title.'   <br> </a>    Publié le :  '.$posts[$i-1]->post_date.
+                '&emsp;Par : '.$posts[$i-1]->post_name.'</li>');
                 } 
         ?>
         

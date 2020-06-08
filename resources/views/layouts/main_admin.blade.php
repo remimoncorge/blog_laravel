@@ -10,23 +10,16 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
- 
 
 </head>
 
 <body>
 
     <div class="top-bar">
-        <div class="top-bar-left">
-            <ul class="menu">
-                <li><a href="/welcome"> Home</a></li>
-                <li><a href="/articles">Articles</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-        </div>
+        
         <div class="top-bar-right">
             <ul class="menu">
-                <li class="connexion"><a href="/connexion">Se connecter</a></li>
+                <li class="deconnexion"><a href="/connexion">Se déconnecter</a></li>
             </ul>
             
         </div>

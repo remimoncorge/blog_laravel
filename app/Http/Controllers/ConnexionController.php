@@ -33,7 +33,7 @@ class ConnexionController extends Controller
         // Sinon on peut accéder au CRUD
         else{
             $posts = \App\Post::orderBy('post_date')->get(); // post trié par date
-            return view('/admin', array('posts' => $posts));
+            return view('/layouts/admin', array('posts' => $posts));
         }
 
         

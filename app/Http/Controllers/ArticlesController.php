@@ -10,6 +10,8 @@ class ArticlesController extends Controller
     //
     function index(){
 
+        // Retourne tous les articles du plus récents au plus vieux
+
         $posts = \App\Post::orderBy('post_date')->get(); // post trié par date
 
         return view('layouts/articles',array('posts' => $posts));
@@ -20,11 +22,11 @@ class ArticlesController extends Controller
 
         // Conversion de l'url vers la forme dans la base de données
         $post_name=str_replace("_", " ", $post_name);
-        $post_name = $post_name.'.';
         
-
         // On récupère le post et les commentaires pour les passer à la vue
         $post = \App\Post::where('post_title',$post_name)->first();
+
+        // On affiche un post avec ses commentaires
         $comments = \App\Comment::where('post_id',$post->id)->get(); 
         return view('posts/single',array( 'post' => $post, 'comments' => $comments));
      }

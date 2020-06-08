@@ -2,7 +2,6 @@
 
 use Faker\Generator as Faker;
 use App\Post;
-use App\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +18,7 @@ $factory->define(Post::class, function (Faker $faker) {
         'user_id' => random_int(0,10),
         'post_date' => $faker->date(),
         'post_content' => $faker->paragraph($nbSentences = 20),
-        'post_title' => $faker->sentence(),
+        'post_title' => $faker->words($nb = 5, $asText = true) ,
         'post_status' => $faker->randomElement(['publié','rédaction']),
         'post_name' => $faker->firstName(),
         'post_type' => 'article',

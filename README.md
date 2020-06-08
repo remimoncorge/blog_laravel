@@ -8,15 +8,15 @@ git clone https://github.com/remimoncorge/blog_laravel.git
 
 #### 2/  Changer les chemins 
 
--`DB_DATABASE` dans le fichier .env
--`$directory` ligne 50 dans le fichier /public/phpliteadmin.php
+ - `DB_DATABASE` dans le fichier .env
+ - `$directory` ligne 50 dans le fichier /public/phpliteadmin.php
 
 
 
 #### 3) A la racine du dossier, lancez les commandes suivantes : 
 
-- ```composer install```
-- ```php artisan serve```
+ -  ```composer install```
+ -  ```php artisan serve```
 
 
 #### 4) URL blog

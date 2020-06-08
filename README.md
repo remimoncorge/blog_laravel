@@ -4,7 +4,7 @@
 ## Installation 
 #### 1/ Cloner le repository 
 
-git clone https://github.com/remimoncorge/blog_laravel.git
+git clone https://github.com/remimoncorge/blog_laravel
 
 #### 2/  Changer les chemins 
 
